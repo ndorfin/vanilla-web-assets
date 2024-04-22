@@ -1,0 +1,22 @@
+{
+	"name": "vanilla-web-assets",
+	"version": "0.2.0",
+	"description": "Web-friendly assets used in the Vanilla website",
+	"scripts": {
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ndorfin/vanilla-web-assets.git"
+	},
+	"keywords": [
+		"patterns",
+		"components",
+		"web-components",
+		"assets"
+	],
+	"author": "Shaun O'Connell <ndorfin@gmail.com>",
+	"bugs": {
+		"url": "https://github.com/ndorfin/vanilla-web-assets/issues"
+	},
+	"homepage": "https://github.com/ndorfin/vanilla-web-assets#readme"
+}
