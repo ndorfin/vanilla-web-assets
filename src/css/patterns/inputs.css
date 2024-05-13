@@ -1,38 +1,113 @@
-/* General settings */
+/* Shared settings */
 [type="checkbox"],
-[type="color"],
 [type="date"],
 [type="email"],
 [type="file"],
 [type="number"],
 [type="password"],
 [type="radio"],
-[type="range"],
 [type="search"],
 [type="tel"],
 [type="text"],
-[type="url"] {
+[type="url"],
+textarea,
+select {
 	--input-font-size: var(--font-size-default);
-	--input-font-units: 16;
 	--input-font-color: var(--color-brown-600);
 	--input-font-color-active: var(--color-black-950);
 	--input-font-color-placeholder: var(--color-black-200);
-	--input-padding-block: calc(var(--input-font-size) - (var(--input-font-size) / var(--input-font-units)));
-	--input-padding-inline: calc(var(--input-font-size) - (var(--input-font-size) / var(--input-font-units)));
-	--input-border-radius: 0.5em;
-	--input-border-color: var(--color-border-default);
+	--input-padding-block: calc((var(--input-font-size) * 0.75) - (var(--input-font-size) / var(--font-size-pixel-units))); /* 12px - 1 */
+	--input-padding-inline: calc((var(--input-font-size) * 1.25) - (var(--input-font-size) / var(--font-size-pixel-units))); /* 20px - 1 */
+	--input-border-radius: var(--border-radius-s);
+	--input-border-color: var(--color-border-subtle);
 	--input-background-color: var(--color-white);
 	--input-size-min-block: calc(var(--font-size-default) * 1.25);
 	--input-size-min-inline: calc(var(--font-size-default) * 1.25);
+	--input-box-shadow: var(--elevation-none);
+}
+
+/* General settings */
+[type="checkbox"],
+[type="date"],
+[type="email"],
+[type="file"],
+[type="number"],
+[type="password"],
+[type="radio"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"],
+textarea,
+select {
 	display: inline-block;
 	box-sizing: border-box;
 	vertical-align: middle;
 	font-family: inherit;
+	box-shadow: var(--input-box-shadow);
+	border-radius: var(--input-border-radius);
+	transition-property: border-radius, box-shadow, border-color, background-color;
+	transition-duration: var(--speed-blink);
+}
+
+[type="checkbox"],
+[type="radio"],
+select {
 	accent-color: var(--input-font-color);
 }
 
+:is(
+	[type="checkbox"],
+	[type="date"],
+	[type="email"],
+	[type="file"],
+	[type="number"],
+	[type="password"],
+	[type="radio"],
+	[type="search"],
+	[type="tel"],
+	[type="text"],
+	[type="url"],
+	textarea,
+	select
+):hover {
+	--input-box-shadow: var(--elevation-s);
+	--input-background-color: var(--color-surface-lighter);
+}
+
+:is(
+	[type="checkbox"],
+	[type="date"],
+	[type="email"],
+	[type="number"],
+	[type="password"],
+	[type="radio"],
+	[type="search"],
+	[type="tel"],
+	[type="text"],
+	[type="url"],
+	textarea,
+	select
+):focus {
+	--input-box-shadow: var(--elevation-s);
+	--input-border-color: var(--color-border-lighter);
+	--input-background-color: var(--color-white);
+	
+	color: var(--input-font-color-active);
+	outline: none;
+}
+
+:is(
+	[type="file"]
+):is(
+	:focus,
+	:hover
+) {
+	box-shadow: var(--elevation-none);
+	outline: none;
+}
+
 /* Text input */
-[type="color"],
 [type="date"],
 [type="email"],
 [type="number"],
@@ -40,7 +115,8 @@
 [type="search"],
 [type="tel"],
 [type="text"],
-[type="url"] {
+[type="url"],
+textarea {
 	appearance: none;
 	min-block-size: var(--input-size-min-block);
 	min-inline-size: var(--input-size-min-inline);
@@ -60,30 +136,12 @@
 	color: var(--input-font-color-placeholder);
 }
 
-/* Range, or slider */
-[type="range"] {
-	padding-block: 1rem;
-	margin: 0;
-}
-
 /* File inputs */
 [type="file"] {
 	font-size: 1rem;
 }
+::-webkit-file-upload-button {
 
-/* Colour inputs */
-[type="color"] {
-	--input-size-min-inline: 6rem;
-	--input-size-min-block: 3.25rem;
-	padding-block: calc(var(--input-padding-block) - 0.125em);
-	padding-inline: calc(var(--input-padding-inline) - 0.125em);
-}
-::-webkit-color-swatch-wrapper {
-	padding: 0;
-}
-::-webkit-color-swatch {
-	border: none;
-	border-radius: calc(var(--input-border-radius) * 0.5);
 }
 
 /* Date inputs */
@@ -104,15 +162,10 @@
 
 /* Checkboxes */
 [type="checkbox"] {
-	border-radius: calc(var(--input-font-size) * 0.25);
+	border-radius: var(--border-radius-s);
 }
 
 /* Radio buttons */
 [type="radio"] {
 	border-radius: 100%;
-}
-
-input:focus {
-	outline-offset: 0.25rem;
-	color: var(--input-font-color-active);
 }

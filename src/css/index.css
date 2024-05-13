@@ -1,6 +1,9 @@
 @import "./fonts.css";
-@import "./colours.css";
-@import "./constants.css";
+@import "./constants/colours.css";
+@import "./constants/border-radius.css";
+@import "./constants/background-blur.css";
+@import "./constants/elevation.css";
+@import "./constants/constants.css";
 @import "./defaults.css";
 @import "./icons.css";
 @import "./patterns/buttons.css";
