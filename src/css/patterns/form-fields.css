@@ -1,4 +1,5 @@
 /* Shared settings */
+/* Set variables to all form controls */
 [type="checkbox"],
 [type="date"],
 [type="email"],
@@ -27,6 +28,7 @@ select {
 }
 
 /* General settings */
+/* Set default styles for all form controls */
 [type="checkbox"],
 [type="date"],
 [type="email"],
@@ -50,6 +52,7 @@ select {
 	transition-duration: var(--speed-blink);
 }
 
+/* Give native controls color theming using accent color */
 [type="checkbox"],
 [type="radio"],
 select {
@@ -116,7 +119,8 @@ select {
 [type="tel"],
 [type="text"],
 [type="url"],
-textarea {
+textarea,
+select {
 	appearance: none;
 	min-block-size: var(--input-size-min-block);
 	min-inline-size: var(--input-size-min-inline);
@@ -168,4 +172,21 @@ textarea {
 /* Radio buttons */
 [type="radio"] {
 	border-radius: 100%;
+}
+
+select {
+	--select-icon-dropdown-width: 1rem;
+	--select-icon-gap: 0.5rem;
+
+	padding-inline-end: calc(var(--input-padding-inline) + var(--select-icon-dropdown-width) + var(--select-icon-gap));
+	background-image: url('../../img/icon_arrow_down_brown_600.svg');
+	background-position: top 50% right calc(var(--input-padding-inline));
+	background-size: var(--select-icon-dropdown-width) var(--select-icon-dropdown-width);
+	background-repeat: no-repeat;
+}
+
+textarea {
+	min-block-size: 2.75rem;
+	min-inline-size: 375px;
+	max-inline-size: 100%;
 }
