@@ -5,9 +5,6 @@
 	/* Status colouring: Success */
 	--form-row-color-label-success: hsl(86, 67%, 31%);
 	--form-row-color-accent-success: hsl(86, 67%, 51%);
-	/* Status colouring: Warning */
-	--form-row-color-label-warning: hsl(24, 100%, 38%);
-	--form-row-color-accent-warning: hsl(24, 100%, 63%);
 	/* Status colouring: Error */
 	--form-row-color-label-error: hsl(356, 100%, 39%);
 	--form-row-color-accent-error: hsl(356, 100%, 65%);
@@ -50,11 +47,6 @@
 .form_row[data-status="success"] {
 	--form-row-color-label: var(--form-row-color-label-success);
 	--form-row-color-accent: var(--form-row-color-accent-success);
-}
-
-.form_row[data-status="warning"] {
-	--form-row-color-label: var(--form-row-color-label-warning);
-	--form-row-color-accent: var(--form-row-color-accent-warning);
 }
 
 .form_row[data-status="error"] {
