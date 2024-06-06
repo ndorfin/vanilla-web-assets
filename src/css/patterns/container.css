@@ -8,9 +8,6 @@
 	--container-background-position: 50% 50%;
 	--container-background-repeat: no-repeat;
 	--container-background-size: cover;
-	--container-background-mask-type: none;
-	--container-background-mask-opacity: 0.3;
-	--container-background-mask-color: var(--container-color-background);
 
 	position: relative;
 	max-inline-size: var(--container-max-inline-size);
@@ -20,26 +17,15 @@
 	color: var(--container-color-foreground);
 }
 
-.container::before,
 .container::after {
+	display: block;
 	content: "";
 	position: absolute;
 	inset-block: 0;
 	inset-inline-start: 50%;
 	inline-size: 100vw;
 	margin-inline-start: -50vw;
-}
-
-.container::before {
-	display: var(--container-background-mask-type);
 	z-index: -1;
-	opacity: var(--container-background-mask-opacity);
-	background-color: var(--container-background-mask-color);
-}
-
-.container::after {
-	display: block;
-	z-index: -2;
 	background-color: var(--container-color-background);
 	background-image: var(--container-background-image);
 	background-position: var(--container-background-position);
@@ -47,6 +33,7 @@
 	background-size: var(--container-background-size);
 }
 
+/* Remove margins from paragraphs and headings to stop them conflicting with the container's padding */
 .container :is(
 	p,
 	h1,
@@ -71,6 +58,7 @@
 	margin-block-end: 0;
 }
 
+/* Set default link colours */
 .container a {
 	color: var(--container-color-link);
 }
@@ -110,9 +98,7 @@
 	--container-color-background: var(--color-black-950);
 	--container-color-foreground: var(--color-surface-subtle);
 	--container-color-link: var(--color-yellow-100);
-	--container-background-image: url('../../img/bg_swirl.png');
+	--container-background-image: url('../../img/bg_swirl.svg');
 	--container-background-position: 50% 50%;
 	--container-background-size: cover;
-	/* Enable the background-mask */
-	--container-background-mask-type: block;
 }
