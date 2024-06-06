@@ -1,4 +1,118 @@
+.container {
+	--container-max-inline-size: 60rem; /* 960px */
+	--container-padding-block: 3rem; /* 48px */
+	--container-padding-inline: 2rem; /* 32px */
+	--container-color-background: var(--color-white);
+	--container-color-foreground: var(--color-brown-600);
+	--container-color-link: inherit;
+	--container-background-position: 50% 50%;
+	--container-background-repeat: no-repeat;
+	--container-background-size: cover;
+	--container-background-mask-type: none;
+	--container-background-mask-opacity: 0.3;
+	--container-background-mask-color: var(--container-color-background);
+
+	position: relative;
+	max-inline-size: var(--container-max-inline-size);
+	margin-inline: auto; 
+	padding-block: var(--container-padding-block);
+	padding-inline: var(--container-padding-inline);
+	color: var(--container-color-foreground);
+}
+
+.container::before,
+.container::after {
+	content: "";
+	position: absolute;
+	inset-block: 0;
+	inset-inline-start: 50%;
+	inline-size: 100vw;
+	margin-inline-start: -50vw;
+}
+
+.container::before {
+	display: var(--container-background-mask-type);
+	z-index: -1;
+	opacity: var(--container-background-mask-opacity);
+	background-color: var(--container-background-mask-color);
+}
+
+.container::after {
+	display: block;
+	z-index: -2;
+	background-color: var(--container-color-background);
+	background-image: var(--container-background-image);
+	background-position: var(--container-background-position);
+	background-repeat: var(--container-background-repeat);
+	background-size: var(--container-background-size);
+}
+
+.container :is(
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+):first-child {
+	margin-block-start: 0;
+}
+
+.container :is(
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+):last-child {
+	margin-block-end: 0;
+}
+
+.container a {
+	color: var(--container-color-link);
+}
+
+/* 
+	Use extra rem in the media query so we have enough whitespace to compensate for a lack of inline padding
+*/
+@media (min-width: 64rem) {
+	.container {
+		--container-padding-inline: 0;
+	}
+}
+
+/* CSS Container query for handling the location lookup form */
 .container[data-mode="location-lookup"] {
 	container-type: inline-size;
 	container-name: form-condensed; /* See ../form.css */
+}
+
+/* 
+	Container theming
+	========================================================= */
+.container[data-theme="alternate"] {
+	/* The subtle grey alternate to the default white container */
+	--container-color-background: var(--color-surface-lighter);
+	--container-color-link: var(--color-black-950);
+}
+
+.container[data-theme="rich"] {
+	/* The coffee-coloured and inverted container */
+	--container-color-background: var(--color-brown-600);
+	--container-color-foreground: var(--color-white);
+}
+
+.container[data-theme="emphasis"] {
+	/* Mostly used for the call-us banner, black background, yellow links. */
+	--container-color-background: var(--color-black-950);
+	--container-color-foreground: var(--color-surface-subtle);
+	--container-color-link: var(--color-yellow-100);
+	--container-background-image: url('../../img/bg_swirl.png');
+	--container-background-position: 50% 50%;
+	--container-background-size: cover;
+	/* Enable the background-mask */
+	--container-background-mask-type: block;
 }
