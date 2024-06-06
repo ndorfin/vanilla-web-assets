@@ -87,6 +87,16 @@
 	--container-color-link: var(--color-black-950);
 }
 
+.container[data-theme="glow"] {
+	--container-background-image: linear-gradient(
+		180deg,
+		hsla(18, 28%, 93%, 1) 0%,
+		hsla(0, 0%, 100%, 1) 30%,
+		hsla(0, 0%, 100%, 1) 70%,
+		hsla(16, 27%, 86%, 1) 100%
+	);
+}
+
 .container[data-theme="rich"] {
 	/* The coffee-coloured and inverted container */
 	--container-color-background: var(--color-brown-600);
@@ -101,4 +111,18 @@
 	--container-background-image: url('../../img/bg_swirl.svg');
 	--container-background-position: 50% 50%;
 	--container-background-size: cover;
+}
+
+.container[data-theme="special"] {
+	/* Spectral/Rainbow gradient. */
+	--container-background-image:
+		url('../../img/bg_swirl.svg'),
+		linear-gradient(
+			270deg,
+			var(--color-orange-500) 0%,
+			var(--color-red-500) 50%,
+			var(--color-purple-500) 100%
+		);
+	--container-background-position: 50% 50%, 0 0;
+	--container-background-size: cover, cover;
 }

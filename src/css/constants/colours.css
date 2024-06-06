@@ -1,9 +1,12 @@
 html {
 	--color-white: hsla(0, 0%, 100%, 1);
+	--color-black-200: hsla(0, 0%, 60%, 1);
+	--color-black-950: hsla(0, 3%, 6%, 1);
 	--color-brown-100: hsla(16, 27%, 86%, 1);
 	--color-brown-600: hsla(16, 27%, 22%, 1);
-	--color-black-950: hsla(0, 3%, 6%, 1);
-	--color-black-200: hsla(0, 0%, 60%, 1);
+	--color-orange-500: hsla(24, 100%, 63%, 1);
+	--color-purple-500: hsla(277, 100%, 76%, 1);
+	--color-red-500: hsla(356, 100%, 65%, 1);
 	--color-yellow-100: hsla(54, 100%, 90%, 1);
 	--color-text-title: hsla(30, 4%, 11%, 1);
 	--color-text-label: var(--color-text-title);
