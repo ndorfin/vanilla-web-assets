@@ -1,0 +1,13 @@
+.card {
+	--card-padding-block: 3.5rem;
+	--card-padding-inline: 2rem;
+
+	padding-block: var(--card-padding-block);
+	padding-inline: var(--card-padding-inline);
+	background-color: var(--color-white);
+}
+
+.card[data-mode="imagebox"] {
+	--card-padding-block: 0;
+	--card-padding-inline: 0;
+}
