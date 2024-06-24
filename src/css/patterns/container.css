@@ -127,14 +127,14 @@
 	--container-background-size: cover, cover;
 }
 
-.container[data-align="top"] {
+.container[data-anchor="top"] {
 	--container-background-position: 50% 0;
 }
 
-.container[data-align="center"] {
+.container[data-anchor="center"] {
 	--container-background-position: 50% 50%;
 }
 
-.container[data-align="bottom"] {
+.container[data-anchor="bottom"] {
 	--container-background-position: 50% 100%;
 }
