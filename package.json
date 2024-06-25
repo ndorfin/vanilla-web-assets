@@ -1,6 +1,6 @@
 {
 	"name": "vanilla-web-assets",
-	"version": "0.10.1",
+	"version": "1.0.0",
 	"description": "Web-friendly assets used in the Vanilla website",
 	"scripts": {
 	},
